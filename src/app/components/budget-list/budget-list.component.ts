@@ -15,4 +15,8 @@ export class BudgetListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  addBudget(budget: Budget){
+    console.log(budget);
+  }
 }

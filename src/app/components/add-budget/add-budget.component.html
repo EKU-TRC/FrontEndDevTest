@@ -1,1 +1,34 @@
-<p>add-budget works!</p>
+<form class="add-form" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="text">Budget Title</label>
+    <input
+      type="text"
+      name="text"
+      id="text"
+      [(ngModel)]="text"
+      placeholder="Add New Budget"
+    />
+  </div>
+  <div class="form-control">
+    <label for="number">Fiscal Year</label>
+    <input
+      type="number"
+      name="number"
+      id="number"
+      [(ngModel)]="number"
+      maxlength="4"
+      placeholder="Enter Year"
+    />
+  </div>
+  <div class="form-control">
+    <label for="Code">Budget Code</label>
+    <input
+      type="text"
+      name="Code"
+      id="Code"
+      [(ngModel)]="code"
+      placeholder="Add Code for Budget"
+    />
+  </div>
+  <input type="submit" value="Save Budget" class="btn btn-block" />
+</form>
