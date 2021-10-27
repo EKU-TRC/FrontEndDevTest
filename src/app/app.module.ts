@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ReadMeComponent } from './read-me/read-me.component';
 import { MatButtonModule, } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,10 +21,15 @@ import { MatSelectModule} from '@angular/material/select';
 import {MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.modules';
+import { HeaderComponent } from './components/header/header.component';
+import { ButtonComponent } from './components/button/button.component';
+import { BudgetListComponent } from './components/budget-list/budget-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ReadMeComponent
+    HeaderComponent,
+    ButtonComponent,
+    BudgetListComponent
   ],
   imports: [
     BrowserModule,
