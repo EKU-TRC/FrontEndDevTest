@@ -5,6 +5,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { MatButtonModule, } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSortModule} from '@angular/material/sort';
 import { MatInputModule} from '@angular/material/input';
@@ -24,12 +25,16 @@ import { AppRoutingModule } from './app-routing.modules';
 import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
 import { BudgetListComponent } from './components/budget-list/budget-list.component';
+import { BudgetItemComponent } from './components/budget-item/budget-item.component';
+import { AddBudgetComponent } from './components/add-budget/add-budget.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ButtonComponent,
-    BudgetListComponent
+    BudgetListComponent,
+    BudgetItemComponent,
+    AddBudgetComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,7 @@ import { BudgetListComponent } from './components/budget-list/budget-list.compon
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     LayoutModule,
     MatButtonModule,
     MatFormFieldModule,
