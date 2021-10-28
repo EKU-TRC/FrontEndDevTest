@@ -1,5 +1,5 @@
 <app-add-budget (onAddBudget)="addBudget($event)"></app-add-budget>
 <app-budget-item 
-*ngFor="let budget of budgets" 
+*ngFor="let budget of budgetList" 
 [budget]="budget"
 ></app-budget-item>

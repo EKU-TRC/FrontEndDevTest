@@ -22,15 +22,6 @@ export class AddBudgetComponent implements OnInit {
       alert("Please enter budget name!")
     }
 
-    const newBudget = {
-    budgetCodeId: 0,
-    fiscalYear: this.number,
-    budgetCode: this.code,
-    budgetTitle: this.text
-    }
-
-    this.onAddBudget.emit(newBudget);
-
     this.text = '';
     this.number = 0;
     this.code = '';
