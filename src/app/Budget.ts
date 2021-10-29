@@ -5,7 +5,7 @@ export interface apiResponse{
 }
 
 export interface Budget{
-        budgetCodeId: number,
+        budgetCodeId?: number,
         fiscalYear: number,
         budgetCode: string,
         budgetTitle: string;

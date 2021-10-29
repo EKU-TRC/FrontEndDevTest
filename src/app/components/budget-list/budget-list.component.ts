@@ -27,8 +27,10 @@ export class BudgetListComponent implements OnInit {
     )
   }
 
-
   addBudget(budget: Budget){
-    console.log(this.budgetList);
+    this.budgetService.addBudget(budget).subscribe((budget) => (this.budgetList.push(budget)));
   }
+  
+
+  
 }

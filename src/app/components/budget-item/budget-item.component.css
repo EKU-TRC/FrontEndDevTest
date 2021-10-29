@@ -1,0 +1,13 @@
+.budget {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    border-style: groove;
+  }
+  
+  .budget h3 p{
+    background: dimgrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }

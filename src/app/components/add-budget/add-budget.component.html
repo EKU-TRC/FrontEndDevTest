@@ -1,10 +1,11 @@
-<form class="add-form" (ngSubmit)="onSubmit()">
+<form *ngIf="showAddBudget" class="add-form" (ngSubmit)="onSubmit()">
   <div class="form-control">
     <label for="text">Budget Title</label>
     <input
       type="text"
       name="text"
       id="text"
+      maxlength="40"
       [(ngModel)]="text"
       placeholder="Add New Budget"
     />
@@ -16,7 +17,8 @@
       name="number"
       id="number"
       [(ngModel)]="number"
-      maxlength="4"
+      min = "0"
+      max = "9999"
       placeholder="Enter Year"
     />
   </div>

@@ -62,7 +62,7 @@ import { AddBudgetComponent } from './components/add-budget/add-budget.component
     MatRadioModule,
     MatInputModule,
     MatTableModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
 
   ],
   providers: [],
