@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './add-budget.component.html',
   styleUrls: ['./add-budget.component.css']
 })
+/** Component used to add a budget */
 export class AddBudgetComponent implements OnInit {
   @Output() onAddBudget: EventEmitter<Budget> = new EventEmitter();
   text: string;
@@ -26,6 +27,7 @@ export class AddBudgetComponent implements OnInit {
   }
 
   onSubmit() {
+    /** Verifies if the user has entered any input*/
     if(!this.text){
       alert("Please enter budget name!")
       return;
@@ -39,6 +41,7 @@ export class AddBudgetComponent implements OnInit {
       return;
     }
 
+    /** Declares new budget then emits it. The budget form is then set to be blank.*/
     const newBudget = {
         fiscalYear: this.number,
         budgetCode: this.code,

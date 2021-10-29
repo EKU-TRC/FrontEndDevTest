@@ -5,6 +5,7 @@ import { Budget } from 'src/app/Budget';
   templateUrl: './budget-item.component.html',
   styleUrls: ['./budget-item.component.css']
 })
+/** Component that takes a Budget as input and displays each budgets attributes*/
 export class BudgetItemComponent implements OnInit {
   @Input() budget: Budget;
 

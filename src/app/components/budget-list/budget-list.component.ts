@@ -15,6 +15,7 @@ export class BudgetListComponent implements OnInit {
 
   constructor(private budgetService: BudgetService) { }
 
+  /**When list is loaded retrieve all budgets from budgetList*/
   ngOnInit(): void {
     this.budgetService.getBudgets()
     .subscribe
@@ -27,6 +28,7 @@ export class BudgetListComponent implements OnInit {
     )
   }
 
+  /** Requests and subscribes to budget service to add budget*/
   addBudget(budget: Budget){
     this.budgetService.addBudget(budget).subscribe((budget) => (this.budgetList.push(budget)));
   }
