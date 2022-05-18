@@ -1,1 +1,32 @@
-<p>post-budget works!</p>
+<header>
+    <h1>{{title}}</h1>
+    </header>
+
+    
+    <div class="form-group">
+        <label for="budgetCodeId">ID</label>
+        <div class="input-group">
+          <input [(ngModel)]="budgetCodeId" type="text" id="budgetCodeId" name="budgetCodeId" class="form-control" ngModel>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fiscalYear">Fiscal Year</label>
+        <div class="input-group">
+          <input [(ngModel)]="fiscalYear" type="text" id="fiscalYear" name="lastname" class="form-control" ngModel>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="budgetCode">Budget Code</label>
+        <div class="input-group">
+          <input [(ngModel)]="budgetCode" type="text" id="budgetCode" name="budgetCode" class="form-control" ngModel>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="budgetTitle">Title</label>
+        <div class="input-group">
+          <input [(ngModel)]="budgetTitle" type="text" id="budgetTitle" name="budgetTitle" class="form-control" ngModel>
+        </div>
+      </div>
+      <app-enter-button (click)="submitCode()" text="Post"></app-enter-button>
+      {{result}}
+    

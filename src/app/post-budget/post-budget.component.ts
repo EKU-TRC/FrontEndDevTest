@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-post-budget',
@@ -6,10 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-budget.component.css']
 })
 export class PostBudgetComponent implements OnInit {
+  budgetCodeId!: number;
+  fiscalYear!: number;
+  budgetCode!: string;
+  budgetTitle!: string;
+  result!: string;
 
-  constructor() { }
+  title: string = "Post New Budget";
+  
+
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+  }
+  
+  submitCode() {
+    let url = 'https://uat.trc.eku.edu/budgetcodeexam/api/add';
+    this.httpClient.post(url, {budgetCodeId:this.budgetCodeId, fiscalYear:this.fiscalYear, budgetCode:this.budgetCode,
+    budgetTitle:this.budgetTitle}).toPromise().then((data:any) => {
+      console.log(data);
+      this.result = JSON.stringify(data.results+". "+data.message);
+      this.result = this.result.replace(/^"(.+)"$/,'$1');
+    })
+      
+    
   }
 
 }

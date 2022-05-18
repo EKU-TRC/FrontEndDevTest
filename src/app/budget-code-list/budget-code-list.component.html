@@ -1,11 +1,21 @@
 <header>
     <h1>{{title}}</h1>
-    <app-enter-button text="Enter" (btnClick)="toggleAddTask()"></app-enter-button>
     </header>
+    <div class="form-group">
+        <label>Search</label>
+        <div class="input-group">
+          <input [(ngModel)]="search" type="text" id="search" name="search" class="form-control" ngModel>
+        </div>
+      </div>
+    <app-enter-button text="Fetch All Codes" (btnClick)="getBudgetCodes()"></app-enter-button>
+    <app-enter-button text="Search by ID" (btnClick)="searchByID()"></app-enter-button>
+    <app-enter-button text="Search by Fiscal Year" (btnClick)="searchByYear()"></app-enter-button>
+    <app-enter-button text="Search by Budget Code" (btnClick)="searchByCode()"></app-enter-button>
+
 
     <table mat-table [dataSource]="budgetCodes">
         <ng-container matColumnDef="budgetCodeId">
-            <th mat-header-cell *matHeaderCellDef> Budget Code </th>
+            <th mat-header-cell *matHeaderCellDef> ID </th>
             <td mat-cell *matCellDef="let budget"> {{budget.budgetCodeId}} </td>
           </ng-container>
         
@@ -25,3 +35,5 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <app-enter-button text="Clear" (btnClick)="getBudgetCodes()"></app-enter-button>
+    {{result}}
