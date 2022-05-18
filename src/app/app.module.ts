@@ -22,13 +22,25 @@ import { MatSelectModule} from '@angular/material/select';
 import {MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.modules';
+import { BudgetCodeListComponent } from './budget-code-list/budget-code-list.component';
+import { EnterButtonComponent } from './enter-button/enter-button.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostBudgetComponent } from './post-budget/post-budget.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
-    ReadMeComponent
+    ReadMeComponent,
+    BudgetCodeListComponent,
+    EnterButtonComponent,
+    PostBudgetComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {path: 'budget-code-list', component: BudgetCodeListComponent},
+      {path: 'post-budget', component: PostBudgetComponent},
+    ]),
     NoopAnimationsModule,
     BrowserModule,
     AppRoutingModule,
@@ -52,7 +64,8 @@ import { AppRoutingModule } from './app-routing.modules';
     MatRadioModule,
     MatInputModule,
     MatTableModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    HttpClientModule
 
   ],
   providers: [],
