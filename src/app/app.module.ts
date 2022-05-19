@@ -27,6 +27,7 @@ import { EnterButtonComponent } from './enter-button/enter-button.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostBudgetComponent } from './post-budget/post-budget.component';
 import { RouterModule } from '@angular/router';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,7 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatFormFieldModule,
     MatDialogModule,
+    MatPaginatorModule,
     MatSortModule,
     MatDialogModule,
     MatTabsModule,
@@ -65,7 +67,7 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatTableModule,
     MatBottomSheetModule,
-    HttpClientModule
+    HttpClientModule,
 
   ],
   providers: [],

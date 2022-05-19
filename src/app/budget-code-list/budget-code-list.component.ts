@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
 export class Budget {
   constructor(
     public budgetCodeId: number,
@@ -24,6 +23,7 @@ export class BudgetCodeListComponent implements OnInit {
   public displayedColumns = ['budgetCodeId', 'fiscalYear', 'budgetCode', 'budgetTitle']; 
   title: string = "Display Budget Codes";
   result!: string;
+  errorMsg! :string;
   constructor(
     private httpClient: HttpClient
   ) {
@@ -33,6 +33,8 @@ export class BudgetCodeListComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  
+  //functions for retrieving data from API
 
   getBudgetCodes(){
     this.httpClient.get<any>('https://uat.trc.eku.edu/budgetcodeexam/api/all').subscribe(
@@ -41,7 +43,8 @@ export class BudgetCodeListComponent implements OnInit {
         this.budgetCodes = response.data;
         this.result = JSON.stringify(response.results+". "+response.message);
         this.result = this.result.replace(/^"(.+)"$/,'$1');
-      }
+      },
+      error => console.log('oops', error)
     );
   }
 
@@ -50,12 +53,14 @@ export class BudgetCodeListComponent implements OnInit {
     this.httpClient.get<any>('https://uat.trc.eku.edu/budgetcodeexam/api/id/'+param).subscribe(
       response => {
         console.log(response);
-        this.budgetCodes.push(response.data);
-        this.budgetCodes = [...this.budgetCodes];
+        //brute force approach, this had odd behavior returning an object of objects, so converted to an array and removed
+        //empty elements that were added
+        this.budgetCodes = Object.values(response);
+        this.budgetCodes = this.budgetCodes.splice(2,3);
         this.result = JSON.stringify(response.results);
         this.result = this.result.replace(/^"(.+)"$/,'$1');
-        console.log(this.budgetCodes);
-      }
+      },
+      error => console.log('Error', error)
     );
   }
 
@@ -67,7 +72,8 @@ export class BudgetCodeListComponent implements OnInit {
         this.budgetCodes = response.data;
         this.result = JSON.stringify(response.results);
         this.result = this.result.replace(/^"(.+)"$/,'$1');
-      }
+      },
+      error => console.log('Error', error)
     );
   }
 
@@ -79,8 +85,8 @@ export class BudgetCodeListComponent implements OnInit {
         this.budgetCodes = response.data;
         this.result = JSON.stringify(response.results);
         this.result = this.result.replace(/^"(.+)"$/,'$1');
-        console.log(this.budgetCodes);
-      }
+      },
+      error => console.log('Error', error)
     );
   }
 }

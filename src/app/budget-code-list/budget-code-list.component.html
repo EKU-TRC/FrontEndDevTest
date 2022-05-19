@@ -1,12 +1,18 @@
 <header>
-    <h1>{{title}}</h1>
+    <h2 class="md-display-3">{{title}}</h2>
     </header>
+    <div class="container">
+    <main>
+    {{result}}
     <div class="form-group">
         <label>Search</label>
         <div class="input-group">
-          <input [(ngModel)]="search" type="text" id="search" name="search" class="form-control" ngModel>
+          <input type="text" id="search" name="search" class="form-control">
         </div>
       </div>
+
+      <br>
+      
     <app-enter-button text="Fetch All Codes" (btnClick)="getBudgetCodes()"></app-enter-button>
     <app-enter-button text="Search by ID" (btnClick)="searchByID()"></app-enter-button>
     <app-enter-button text="Search by Fiscal Year" (btnClick)="searchByYear()"></app-enter-button>
@@ -35,5 +41,5 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <app-enter-button text="Clear" (btnClick)="getBudgetCodes()"></app-enter-button>
-    {{result}}
+</main>
+</div>
