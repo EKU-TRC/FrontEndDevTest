@@ -34,7 +34,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ReadMeComponent,
     BudgetCodeListComponent,
     EnterButtonComponent,
-    PostBudgetComponent
+    PostBudgetComponent,
   ],
   imports: [
     BrowserModule,

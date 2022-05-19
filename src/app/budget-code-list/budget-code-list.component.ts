@@ -23,7 +23,6 @@ export class BudgetCodeListComponent implements OnInit {
   public displayedColumns = ['budgetCodeId', 'fiscalYear', 'budgetCode', 'budgetTitle']; 
   title: string = "Display Budget Codes";
   result!: string;
-  errorMsg! :string;
   constructor(
     private httpClient: HttpClient
   ) {

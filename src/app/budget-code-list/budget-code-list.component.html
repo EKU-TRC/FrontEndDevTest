@@ -3,7 +3,9 @@
     </header>
     <div class="container">
     <main>
-    {{result}}
+    <!--returns server side success/fail message-->
+    <div class="results">{{result}}</div>
+    <!--search bar-->
     <div class="form-group">
         <label>Search</label>
         <div class="input-group">
@@ -12,13 +14,14 @@
       </div>
 
       <br>
-      
+    
+    <!--table search buttons-->  
     <app-enter-button text="Fetch All Codes" (btnClick)="getBudgetCodes()"></app-enter-button>
     <app-enter-button text="Search by ID" (btnClick)="searchByID()"></app-enter-button>
     <app-enter-button text="Search by Fiscal Year" (btnClick)="searchByYear()"></app-enter-button>
     <app-enter-button text="Search by Budget Code" (btnClick)="searchByCode()"></app-enter-button>
 
-
+    <!--data table-->  
     <table mat-table [dataSource]="budgetCodes">
         <ng-container matColumnDef="budgetCodeId">
             <th mat-header-cell *matHeaderCellDef> ID </th>

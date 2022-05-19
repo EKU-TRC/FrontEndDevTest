@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./post-budget.component.css']
 })
 export class PostBudgetComponent implements OnInit {
-  budgetCodeId!: number;
   fiscalYear!: number;
   budgetCode!: string;
   budgetTitle!: string;
@@ -21,10 +20,10 @@ export class PostBudgetComponent implements OnInit {
   ngOnInit(): void {
   }
   
+  //function for submitting budget information
   submitCode() {
     let url = 'https://uat.trc.eku.edu/budgetcodeexam/api/add';
-    this.httpClient.post(url, {budgetCodeId:this.budgetCodeId, fiscalYear:this.fiscalYear, budgetCode:this.budgetCode,
-    budgetTitle:this.budgetTitle}).toPromise().then((data:any) => {
+    this.httpClient.post(url, {fiscalYear:this.fiscalYear, budgetCode:this.budgetCode, budgetTitle:this.budgetTitle}).toPromise().then((data:any) => {
       console.log(data);
       this.result = JSON.stringify(data.results+". "+data.message);
       this.result = this.result.replace(/^"(.+)"$/,'$1');
