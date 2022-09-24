@@ -21,6 +21,7 @@ import { MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatSelectModule} from '@angular/material/select'; 
 import {MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.modules';
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AppRoutingModule } from './app-routing.modules';
     MatBottomSheetModule,
     MatProgressBarModule,
     FormsModule,
+    HttpClientModule,
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
