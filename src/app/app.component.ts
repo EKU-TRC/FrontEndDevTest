@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { codeBudget } from './budgets/code.budget';
 
 @Component({
   selector: 'app-root',

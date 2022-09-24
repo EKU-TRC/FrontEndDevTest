@@ -23,6 +23,7 @@ import {MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.modules';
+import {codeBudget} from './budgets/code.budget'
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,7 @@ import { AppRoutingModule } from './app-routing.modules';
     MatBottomSheetModule
 
   ],
-  providers: [],
+  providers: [codeBudget],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
