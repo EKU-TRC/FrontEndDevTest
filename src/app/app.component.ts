@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { codeBudget } from './budgets/code.budget';
 
 @Component({
@@ -6,10 +6,13 @@ import { codeBudget } from './budgets/code.budget';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Front End Dev Test for Training Resource Center';
   constructor (private codeBudget: codeBudget){}
   
+  ngOnInit(): void {
+    this.OnGetCodes();
+  }
   OnGetCodes(): void {
     this.codeBudget.getCodes()
     .subscribe (

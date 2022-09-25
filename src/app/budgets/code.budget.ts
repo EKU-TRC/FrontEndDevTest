@@ -7,6 +7,6 @@ import { Code } from "../interface/code";
 export class codeBudget
 { constructor (private httpclient: HttpClient){}
 getCodes(): Observable<any>{
-    return this.httpclient.get('https://uat.trc.eku.edu/budgetcodeexam/api/codes');
+    return this.httpclient.get('https://uat.trc.eku.edu/budgetcodeexam/api/all/');
 }
 }
