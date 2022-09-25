@@ -23,11 +23,14 @@ import {MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.modules';
-import {codeBudget} from './budgets/code.budget'
+import {codeBudget} from './budgets/code.budget';
+import { CodesTableComponent } from './codes-table/codes-table.component';
+import { MatPaginatorModule } from '@angular/material/paginator'
 @NgModule({
   declarations: [
     AppComponent,
-    ReadMeComponent
+    ReadMeComponent,
+    CodesTableComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import {codeBudget} from './budgets/code.budget'
     MatRadioModule,
     MatInputModule,
     MatTableModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatPaginatorModule
 
   ],
   providers: [codeBudget],
