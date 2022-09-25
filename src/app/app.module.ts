@@ -24,13 +24,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.modules';
 import {codeBudget} from './budgets/code.budget';
-import { DataTableComponent } from './data-table/data-table.component';
 import { MatPaginatorModule } from '@angular/material/paginator'
 @NgModule({
   declarations: [
     AppComponent,
     ReadMeComponent,
-    DataTableComponent
   ],
   imports: [
     BrowserModule,
