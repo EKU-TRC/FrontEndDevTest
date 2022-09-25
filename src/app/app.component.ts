@@ -1,5 +1,5 @@
 import { Component, OnInit  } from '@angular/core';
-import { codeBudget } from './budgets/code.budget';
+import { codeService } from './services/code.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,13 @@ import { codeBudget } from './budgets/code.budget';
 export class AppComponent implements OnInit {
   title = 'Front End Dev Test for Training Resource Center';
   
-  constructor (private codeBudget: codeBudget){}
+  constructor (private codeService: codeService){}
   
   ngOnInit(): void {
     this.OnGetCodes();
   }
   OnGetCodes(): void {
-    this.codeBudget.getCodes()
+    this.codeService.getCodes()
     .subscribe (
       (response => console.log(response)),
       (error: any) => console.log(error),

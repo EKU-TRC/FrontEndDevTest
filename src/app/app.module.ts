@@ -23,7 +23,7 @@ import {MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.modules';
-import {codeBudget} from './budgets/code.budget';
+import {codeService} from './services/code.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CodesComponent } from './component/codes/codes.component'
 @NgModule({
@@ -62,7 +62,7 @@ import { CodesComponent } from './component/codes/codes.component'
     MatPaginatorModule
 
   ],
-  providers: [codeBudget],
+  providers: [codeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

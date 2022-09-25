@@ -4,7 +4,7 @@ import { HttpClient, } from "@angular/common/http";
 import { Code } from "../interface/code";
 
 @Injectable ({providedIn: 'root'})
-export class codeBudget
+export class codeService
 { constructor (private httpclient: HttpClient){}
 
 getCodes(): Observable<any>{
