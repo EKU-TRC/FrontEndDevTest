@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpClient, } from "@angular/common/http";
-import { Code } from "../interface/code";
+import { Code } from "../interface/code.interface";
 
 @Injectable ({providedIn: 'root'})
 export class codeService { 
-    
+
     constructor (private httpclient: HttpClient){}
 
 //Fetch codes
