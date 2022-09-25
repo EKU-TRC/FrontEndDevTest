@@ -24,11 +24,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.modules';
 import {codeBudget} from './budgets/code.budget';
-import { MatPaginatorModule } from '@angular/material/paginator'
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { CodesComponent } from './component/codes/codes.component'
 @NgModule({
   declarations: [
     AppComponent,
     ReadMeComponent,
+    CodesComponent,
   ],
   imports: [
     BrowserModule,
