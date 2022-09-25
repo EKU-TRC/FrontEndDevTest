@@ -1,1 +1,24 @@
-<p>codes works!</p>
+<section *ngIf="response" class="card">
+    <div class="card-body">
+        <h2>Eastern Kentucky University Budget Codes</h2>
+    </div>
+    <br>
+    <table *ngIf="response" class="table table-striped">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Year</th>
+                <th scope="col">Code</th>
+                <th scope="col">Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let code of response?.data; let i = index">
+                <td>{{code.budgetCodeId}}</td>
+                <td>{{code.fiscalYear}}</td>
+                <td>{{code.budgetCode}}</td>
+                <td>{{code.budgetTitle}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
