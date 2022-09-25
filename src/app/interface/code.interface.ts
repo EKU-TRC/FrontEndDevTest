@@ -1,6 +1,6 @@
 export interface Code {
-budgetCodeId: number;
+budgetCodeId?: number;
   fiscalYear: number;
-  budgetCode: string;
+  budgetCode?: string;
   budgetTitle: string;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit  } from '@angular/core';
+import { Code } from './interface/code.interface';
 import { codeService } from './services/code.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { codeService } from './services/code.service';
 })
 export class AppComponent implements OnInit {
   title = 'Front End Dev Test for Training Resource Center';
-  
+  private code: Code = {
+      "fiscalYear": 2022,
+      "budgetTitle": ""
+  };
   constructor (private codeService: codeService){}
   
   ngOnInit(): void {
