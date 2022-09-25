@@ -1,6 +1,7 @@
 <section *ngIf="response" class="card">
     <div class="card-body">
         <h2>Eastern Kentucky University Budget Codes</h2>
+        <p><a href="#form">Faculty and staff, add to this list.</a></p>
     </div>
     <br>
     <table *ngIf="response" class="table table-striped">
@@ -21,4 +22,44 @@
             </tr>
         </tbody>
     </table>
+</section>
+<hr>
+<hr>
+<section>
+    <form id="form">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Fiscal Year</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>2020</option>
+            <option>2021</option>
+            <option>2022</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Choose your budget title</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option>ABC Project</option>
+            <option>ABC Training</option>
+            <option>EKU Project</option>
+            <option>EKU Training</option>
+            <option>Hardware Upgrades</option>
+            <option>Misc. Expenses</option>
+            <option>Other Funds</option>
+            <option>Research and Services</option>
+            <option>TRC Project</option>
+            <option>TRC Training</option>
+            <option>XYZ Project</option>
+            <option>XYZ Training</option>
+          </select>
+        </div>
+        &nbsp;
+        &nbsp;
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      &nbsp;
+      &nbsp;
 </section>

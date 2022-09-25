@@ -7,10 +7,10 @@ body {
     background-color: #4c151e;
     color: white;
 }
-h1, h2 {
+h1, h2, p, .btn {
     text-align: center;
 }
-h2, th, td {
+h2, th, td, a {
     color: #4c151e;
 }
 th, td {
