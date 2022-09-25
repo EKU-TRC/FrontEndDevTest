@@ -12,5 +12,10 @@ export class codeService {
 getCodes(): Observable<any>{
     return this.httpclient.get('https://uat.trc.eku.edu/budgetcodeexam/api/all/');
 }
+//Create codes
+createCodes(code: Code): Observable<Code>{
+    return this.httpclient.post<Code>('https://uat.trc.eku.edu/budgetcodeexam/api/all/', code);
+} 
+
 
 }
