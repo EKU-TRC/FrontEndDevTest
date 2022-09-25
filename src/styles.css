@@ -7,18 +7,18 @@ body {
     background-color: #4c151e;
     color: white;
 }
-h1 {
+h1, h2 {
     text-align: center;
 }
-h2 {
+h2, th, td {
     color: #4c151e;
-    text-align: center;
+}
+th, td {
+    text-align: right;
 }
 th {
     font-size: 20px;
-    color: #4c151e;
-}
+}   
 td {
     font-size: 16px;
-    color: #4c151e;
 }
