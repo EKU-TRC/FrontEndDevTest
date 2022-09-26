@@ -8,10 +8,8 @@ import { Response } from 'src/app/interface/response.interface';
   styleUrls: ['./codes.component.css']
 })
 export class CodesComponent implements OnInit {
-  response!: Response; 
-  onSubmit(data: any){
-    console.warn(data);
-  }
+  response: any;
+  
   constructor(private codeService: codeService) { }
 
   ngOnInit(): void {
