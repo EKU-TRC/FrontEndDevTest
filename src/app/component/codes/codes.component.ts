@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { codeService } from 'src/app/services/code.service';
 import { Response } from 'src/app/interface/response.interface';
-
 @Component({
   selector: 'app-codes',
   templateUrl: './codes.component.html',
