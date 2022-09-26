@@ -11,6 +11,7 @@ import { FormBuilder, AbstractControl, FormControl, FormGroup, Validators } from
 
 export class CodesComponent implements OnInit{
   public userForm:FormGroup;
+  listData:any;
   fiscalYear: string='';
   budgetTitle: string='';
   response: any;
@@ -18,7 +19,9 @@ export class CodesComponent implements OnInit{
   constructor(
     private codeService: codeService,
     private fb: FormBuilder,
-    ) { this.userForm=this.fb.group({
+    ) { 
+      this.listData = [];
+      this.userForm=this.fb.group({
       fiscalYear:['', Validators.required],
       budgetTitle:['', Validators.required]
     });
@@ -33,8 +36,12 @@ export class CodesComponent implements OnInit{
     );
   }
   setValue() {
+    this.listData.push(this.userForm.value);
+    this.userForm.reset();
     console.log(this.fiscalYear=this.userForm.get('fiscalYear')?.value)
     console.log(this.budgetTitle=this.userForm.get('budgetTitle')?.value)
   }
-
+  reset(){
+    this.userForm.reset();
+  }
 }
