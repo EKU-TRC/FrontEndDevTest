@@ -9,7 +9,9 @@ import { codeService } from './services/code.service';
 })
 export class AppComponent implements OnInit {
   title = 'Front End Dev Test for Training Resource Center';
-  
+  onNewBudgetCreate(newBudgets: {fiscalYear: number, budgetTitle: string}){
+
+  }
   constructor (private codeService: codeService){}
   ngOnInit(): void {
     this.OnGetCodes();
