@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { codeService } from 'src/app/services/code.service';
 import { Response } from 'src/app/interface/response.interface';
+import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-codes',
   templateUrl: './codes.component.html',
@@ -12,7 +13,10 @@ export class CodesComponent implements OnInit {
     console.warn(data);
   }
   
-  constructor(private codeService: codeService) { }
+  constructor(
+    private codeService: codeService,
+    private formBuilder: FormBuilder,
+    ) { }
 
   ngOnInit(): void {
     this.codeService.getCodes().subscribe(
