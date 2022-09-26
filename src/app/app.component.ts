@@ -2,6 +2,7 @@ import { Component, OnInit  } from '@angular/core';
 import { Code } from './interface/code.interface';
 import { codeService } from './services/code.service';
 import { FormBuilder } from '@angular/forms';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +10,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   title = 'Front End Dev Test for Training Resource Center';
+
   private code: Code = {
     "fiscalYear": 2022,
     "budgetTitle": ""
@@ -29,7 +31,7 @@ export class AppComponent implements OnInit {
       ()=> console.log('Done getting codes')
     );
   }
-  onSubmit(data: any) {
+  onsubmit(data: any) {
     console.warn(data);
   }
 }
