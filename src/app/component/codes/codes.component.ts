@@ -9,7 +9,9 @@ import { Response } from 'src/app/interface/response.interface';
 })
 export class CodesComponent implements OnInit {
   response!: Response; 
-
+  onSubmit(data: any){
+    console.warn(data);
+  }
   constructor(private codeService: codeService) { }
 
   ngOnInit(): void {
