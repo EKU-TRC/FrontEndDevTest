@@ -26,13 +26,12 @@ import { AppRoutingModule } from './app-routing.modules';
 import {codeService} from './services/code.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CodesComponent } from './component/codes/codes.component';
-import { AddBudgetComponent } from './component/component/add-budget/add-budget.component'
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     ReadMeComponent,
     CodesComponent,
-    AddBudgetComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +60,8 @@ import { AddBudgetComponent } from './component/component/add-budget/add-budget.
     MatInputModule,
     MatTableModule,
     MatBottomSheetModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule
 
   ],
   providers: [codeService],
