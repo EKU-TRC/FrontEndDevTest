@@ -4,7 +4,10 @@ import { HttpClient, } from "@angular/common/http";
 import { Code } from "../interface/code.interface";
 
 @Injectable ({providedIn: 'root'})
-export class codeService { 
+export class codeService {
+  clearCode(): Observable<any> {
+    throw new Error('Method not implemented.');
+  } 
 
     constructor (private httpclient: HttpClient){}
 

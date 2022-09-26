@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
     ){}
   ngOnInit(): void {
     this.OnGetCodes();
-    this.OnCreateCodes()
   }
 
   OnGetCodes(): void {
@@ -30,13 +29,8 @@ export class AppComponent implements OnInit {
       ()=> console.log('Done getting codes')
     );
   }
-  OnCreateCodes(): void {
-    this.codeService.createCodes(this.code)
-    .subscribe (
-      (response => console.log(response)),
-      (error: any) => console.log(error),
-      ()=> console.log('Done creating codes')
-    );
+  onSubmit(data: any) {
+    console.warn(data);
   }
 }
 

@@ -1,16 +1,17 @@
 <div *ngIf="response" class="card">
     <div class="card-body">
         <h2><b>Eastern Kentucky University Budget Codes</b></h2>
-        <h3>Faculty and staff, enter your information from a secure workspace to add to this budget. We will assign the ID and Code.</h3>
+        <h3>Faculty and staff, enter your information from a secure workspace to add to this budget. We will assign the ID and Code once approved.</h3>
         <form id="form">
             <div class="form-group">
               <label for="exampleFormControlInput1">Email address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="firstname.lastname@eku.edu" required>
             </div>
             <div class="form-group">
               <label for="exampleFormControlSelect1">Fiscal Year</label>
               <select class="form-control" id="exampleFormControlSelect1" required>
                 <option>2022</option>
+                <option>2023</option>
               </select>
             </div>
             <div class="form-group">
