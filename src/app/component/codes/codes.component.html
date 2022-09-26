@@ -2,17 +2,14 @@
     <div class="card-body">
         <h2><b>Eastern Kentucky University Budget Codes</b></h2>
         <h3>Faculty and staff, enter your information from a secure workspace to add to this budget. We will assign the ID and Code once approved.</h3>
-        <form id="form">
+        <form id="form" [formGroup]="userForm">
             <div class="form-group">
               <label for="fiscalYear">Fiscal Year</label>
-              <select class="form-control" id="fiscalYear" [(ngModel)]="fiscalYear" required>
-                <option>2022</option>
-                <option>2023</option>
-              </select>
+              <input type="text" name="fiscalYear" class="form-control" id="fiscalYear" formControlName="fiscalYear" placeholder="2022" required/>
             </div>
             <div class="form-group">
               <label for="budgetTitle">Choose your budget title</label>
-              <select multiple class="form-control" id="budgetTitle" [(ngModel)]="budgetTitle" required>
+              <select multiple class="form-control" id="budgetTitle" formControlName="budgetTitle" required>
                 <option>ABC Project</option>
                 <option>ABC Training</option>
                 <option>EKU Project</option>
@@ -29,7 +26,7 @@
             </div>
             &nbsp;
             &nbsp;
-            <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+            <button type="submit" class="btn btn-primary" (click)="setValue()">Submit</button>
           </form>
 <br>
 </div>
