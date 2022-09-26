@@ -11,7 +11,10 @@ import { FormBuilder } from '@angular/forms';
 
 export class CodesComponent implements OnInit{
   response: any;
+  fiscalYear: string='';
+  budgetTitle: string='';
   
+
   constructor(
     private codeService: codeService,
     private formBuilder: FormBuilder,
@@ -25,9 +28,7 @@ export class CodesComponent implements OnInit{
       }
     );
   }
-  
-    onSubmit(data: any) {
-      console.warn(data);
-    }
-
+  onSubmit() {
+    console.log('Fiscal Year:',this.fiscalYear, 'Budget Title:',this.budgetTitle);
+  }
 }
