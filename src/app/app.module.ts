@@ -27,6 +27,7 @@ import {codeService} from './services/code.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CodesComponent } from './component/codes/codes.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,

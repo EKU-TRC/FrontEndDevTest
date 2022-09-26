@@ -7,18 +7,11 @@ import { Response } from 'src/app/interface/response.interface';
   styleUrls: ['./codes.component.css']
 })
 export class CodesComponent implements OnInit {
-  fiscalYear:string="";
-  fiscalYears:Array<string>=Array<string>();
-  budgetTitle:string="";
-  budgetTitles:Array<string>=Array<string>();
   response: any;
-  CallSomeLogic(){
-    alert("Thank you.")
-    this.fiscalYears.push(this.fiscalYear);
-    this.fiscalYear="";
-    this.budgetTitles.push(this.budgetTitle);
-    this.budgetTitle="";
+  onSubmit(data: any){
+    console.warn(data);
   }
+  
   constructor(private codeService: codeService) { }
 
   ngOnInit(): void {
