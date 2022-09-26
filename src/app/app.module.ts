@@ -21,11 +21,18 @@ import { MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatSelectModule} from '@angular/material/select'; 
 import {MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.modules';
+import {codeService} from './services/code.service';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { CodesComponent } from './component/codes/codes.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ReadMeComponent
+    ReadMeComponent,
+    CodesComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,15 +54,18 @@ import { AppRoutingModule } from './app-routing.modules';
     MatBottomSheetModule,
     MatProgressBarModule,
     FormsModule,
+    HttpClientModule,
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
     MatInputModule,
     MatTableModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatPaginatorModule,
+    ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [codeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

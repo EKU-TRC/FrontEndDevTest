@@ -1,0 +1,60 @@
+<div *ngIf="response" class="card">
+    <div class="card-body">
+        <h2><b>Eastern Kentucky University Budget Codes</b></h2>
+        <h3>Faculty and staff, enter your information from a secure workspace to add to this budget. We will assign the ID and Code once approved.</h3>
+        <form id="form" [formGroup]="userForm">
+            <div class="form-group">
+              <label for="fiscalYear">Fiscal Year</label>
+              <input type="text" name="fiscalYear" class="form-control" id="fiscalYear" formControlName="fiscalYear" placeholder="2022" required/>
+            </div>
+            <div class="form-group">
+              <label for="budgetTitle">Choose your budget title</label>
+              <select multiple class="form-control" id="budgetTitle" formControlName="budgetTitle" required>
+                <option>ABC Project</option>
+                <option>ABC Training</option>
+                <option>EKU Project</option>
+                <option>EKU Training</option>
+                <option>Hardware Upgrades</option>
+                <option>Misc. Expenses</option>
+                <option>Other Funds</option>
+                <option>Research and Services</option>
+                <option>TRC Project</option>
+                <option>TRC Training</option>
+                <option>XYZ Project</option>
+                <option>XYZ Training</option>
+              </select>
+            </div>
+            &nbsp;
+            &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="setValue()">Submit</button>
+          </form>
+<br>
+</div>
+    
+    <table *ngIf="response" class="table table-striped">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Year</th>
+                <th scope="col">Code</th>
+                <th scope="col">Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let code of response?.data; let i = index">
+                <td>{{code.budgetCodeId}}</td>
+                <td>{{code.fiscalYear}}</td>
+                <td>{{code.budgetCode}}</td>
+                <td>{{code.budgetTitle}}</td>
+            </tr>
+            <tr *ngFor="let item of listData">
+                <td></td>
+                <td><span>{{item.fiscalYear}}</span></td>
+                <td></td>
+                <td><span>{{item.budgetTitle}}</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+          
+        
