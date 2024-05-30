@@ -7,34 +7,28 @@
         <div class="">
             <h1>PostBudget Component</h1>
 
-            <form class="form-container">
+            <form [formGroup] = "budgetForm" (submit)="submitApplication()" class="form-container">
                 <h1>Add a new BudgetCode</h1>
             <mat-form-field class="full-width">
-                <mat-label>Input</mat-label>
-                <input matInput>
+                <mat-label>Fiscal Year</mat-label>
+                <input matInput formControlName="fiscalYear"  type="number" required>
               </mat-form-field>
               <br>
               <mat-form-field class="full-width">
-                <mat-label>Input</mat-label>
-                <input matInput>
+                <mat-label>Budget Code</mat-label>
+                <input matInput formControlName="budgetCode" required>
               </mat-form-field>
               <br>
               <mat-form-field class="full-width">
-                <mat-label>Input</mat-label>
-                <input matInput>
+                <mat-label>Budget Title</mat-label>
+                <input matInput formControlName="budgetTitle" required>
               </mat-form-field>
               <br>
-              <mat-form-field class="full-width">
-                <mat-label>Input</mat-label>
-                <input matInput>
-              </mat-form-field>
               <br>
-           
-
-              <button mat-raised-button color="primary" type="submit">Submit</button>
+              <button mat-raised-button color="primary" type="submit" [disabled]="!budgetForm.valid">Submit</button>
             </form>
             
-        
+            
               
               
               

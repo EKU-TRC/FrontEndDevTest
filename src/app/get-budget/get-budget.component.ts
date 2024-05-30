@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BudgetCode } from '../budget-code';
 import { CommonModule } from '@angular/common';
 import {MatTableModule} from '@angular/material/table';
-import { GetRequestService } from '../get-request.service';
+import { ApiRequestService } from '../api-request.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ViewChild } from '@angular/core';
@@ -11,7 +11,7 @@ import { ViewChild } from '@angular/core';
   selector: 'app-get-budget',
   standalone: true,
   imports: [CommonModule, MatTableModule, MatPaginator],
-  providers: [GetRequestService,  ViewChild, MatTableDataSource],
+  providers: [ApiRequestService,  ViewChild, MatTableDataSource],
   templateUrl: './get-budget.component.html',
   styleUrl: './get-budget.component.scss'
 })
@@ -28,7 +28,7 @@ export class GetBudgetComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   //inject our GetRequestService
-  constructor(private dataService: GetRequestService) { }
+  constructor(private dataService: ApiRequestService) { }
 
   ngOnInit() {
     this.dataService.getData().subscribe((response: any) => {
@@ -43,9 +43,9 @@ export class GetBudgetComponent implements OnInit {
         budgetTitle: item.budgetTitle
       }));
 
+      console.log("Grabbing all budgetCodes");
       console.log(this.budgetCodeList); // Now this will log an array of BudgetCode objects
-      console.log(this.budgetCodeList); // Now this will log an array of BudgetCode objects
-      console.log(this.budgetCodeList[5].budgetCode);
+      
 
       // Initialize MatTableDataSource
     this.dataSource = new MatTableDataSource(this.budgetCodeList);
@@ -53,6 +53,7 @@ export class GetBudgetComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
       
     });
+
 
 
   }
@@ -74,6 +75,10 @@ export class GetBudgetComponent implements OnInit {
   }
 
 ];
+
+
+
+
 
 //used in MatTable
 displayedColumns: string[] = ['budgetCodeId', 'fiscalYear', 'budgetCode', 'budgetTitle'];
