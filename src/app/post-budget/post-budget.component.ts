@@ -23,6 +23,8 @@ import { Router } from '@angular/router';
 })
 export class PostBudgetComponent {
 
+  //binds elements on form into data we can use here
+
   budgetForm = new FormGroup({
     fiscalYear: new FormControl(''),
     budgetCode: new FormControl(''),
@@ -34,11 +36,15 @@ export class PostBudgetComponent {
     
   }
  
-  submitApplication(){
+  //This function is called when form is submitted
+  submitBudget(){
     console.log("submitted");
+
+    //convert form into BudgetCode
     const budgetCode: BudgetCode = this.budgetForm.value as BudgetCode;
     console.log(budgetCode);
 
+    //Send Post Request using ApiRequest Service class
      this.dataService.postData(budgetCode).subscribe(response => {
       console.log('Post Response:', response);
       
@@ -56,7 +62,7 @@ export class PostBudgetComponent {
     console.log("Reloading...");
     setTimeout(() => {
       location.reload();
-    }, 2000); // 500 milliseconds delay
+    }, 2000); // 2 second delay
   }
 
   

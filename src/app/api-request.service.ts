@@ -7,6 +7,8 @@ import { BudgetCode } from './budget-code';
 @Injectable({
   providedIn: 'root'
 })
+
+//Service used in getBudget and postBudget components for API calls
 export class ApiRequestService {
 
   constructor(private http: HttpClient) { }
@@ -16,7 +18,7 @@ export class ApiRequestService {
     return this.http.get('https://uat.trc.eku.edu/budgetcodeexam/api/all');
   }
 
-
+    // Simple service that calls a POST request to this url, provided a BudgetCode
   postData(budgetCode: BudgetCode): Observable<any> {
     const url = 'https://uat.trc.eku.edu/budgetcodeexam/api/add';
     const headers = new HttpHeaders({

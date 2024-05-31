@@ -7,7 +7,8 @@
         <div class="">
             <h1>PostBudget Component</h1>
 
-            <form [formGroup] = "budgetForm" (submit)="submitApplication()" class="form-container">
+            <!-- formGroup binds elements here to be used in ts file, submitBudget is function called -->
+            <form [formGroup] = "budgetForm" (submit)="submitBudget()" class="form-container">
                 <h1>Add a new BudgetCode</h1>
             <mat-form-field class="full-width">
                 <mat-label>Fiscal Year</mat-label>
@@ -28,12 +29,6 @@
               <button mat-raised-button color="primary" type="submit" [disabled]="!budgetForm.valid">Submit</button>
             </form>
             
-            
-              
-              
-              
-             
-
             </div>
             </main>
             </div>
