@@ -1,0 +1,34 @@
+<div class="container">
+    <main>
+        <div class="logoContainer">
+            <img src="https://portal.trc.eku.edu/identityServer/TRClogo.png" class="logo" alt="TRC Logo" />
+        </div>
+
+        <div class="">
+            <h1>PostBudget Component</h1>
+
+            <!-- formGroup binds elements here to be used in ts file, submitBudget is function called -->
+            <form [formGroup] = "budgetForm" (submit)="submitBudget()" class="form-container">
+                <h1>Add a new BudgetCode</h1>
+            <mat-form-field class="full-width">
+                <mat-label>Fiscal Year</mat-label>
+                <input matInput formControlName="fiscalYear"  type="number" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="full-width">
+                <mat-label>Budget Code</mat-label>
+                <input matInput formControlName="budgetCode" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="full-width">
+                <mat-label>Budget Title</mat-label>
+                <input matInput formControlName="budgetTitle" required>
+              </mat-form-field>
+              <br>
+              <br>
+              <button mat-raised-button color="primary" type="submit" [disabled]="!budgetForm.valid">Submit</button>
+            </form>
+            
+            </div>
+            </main>
+            </div>
