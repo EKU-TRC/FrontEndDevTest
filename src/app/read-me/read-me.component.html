@@ -160,6 +160,10 @@
                 &#125;
                 </pre>
                     </mat-expansion-panel>
+                  <app-generic-form
+                    [valueName]="'id'"
+                    (formOutput)="handleIdSubmit($event)"
+                  ></app-generic-form>
                 </div>
                 <div class="method">
                     <mat-expansion-panel>
@@ -206,7 +210,7 @@
                     </mat-expansion-panel>
 
                     <div class="method">
-
+                    <a mat-raised-button href="/budget-codes">Fetch All</a>
 
                     </div>
                     <!-- ***** Fetch a specific fiscal year ****************************************************-->
@@ -253,6 +257,10 @@
                     &#125;
                                 </pre>
                     </mat-expansion-panel>
+                  <app-generic-form
+                    [valueName]="'year'"
+                    (formOutput)="handleYear($event)"
+                  ></app-generic-form>
                 </div>
                 <div class="method">
 
@@ -291,7 +299,10 @@
                         </pre>
 
                     </mat-expansion-panel>
-
+                  <app-generic-form
+                    [valueName]="'budget code'"
+                    (formOutput)="handleBudget($event)"
+                  ></app-generic-form>
                 </div>
                 <div class="method">
                     <!-- ***** Add a budget code ****************************************************-->
@@ -337,7 +348,10 @@
                 </pre>
                         <br>
                     </mat-expansion-panel>
-
+                  <app-generic-form
+                    [valueName]="'addCode'"
+                    (formOutput)="handleAddBudgetCode($event)"
+                  ></app-generic-form>
                 </div>
             </div>
 
